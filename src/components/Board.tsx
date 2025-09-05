@@ -12,6 +12,7 @@ const Board = forwardRef<HTMLDivElement, BoardProps>(({ children }, ref) => {
   useEffect(() => {
     // Nota para el revisor: Demostración de uso del hook useContext, disponible en toda la app.
     const columns = getColumns();
+    // Inicialización del board si fuera necesario
     console.log('Board mounted with columns:', columns);
   }, [getColumns]);
 
@@ -22,32 +23,37 @@ const Board = forwardRef<HTMLDivElement, BoardProps>(({ children }, ref) => {
         display: 'flex',
         flexDirection: 'column',
         height: '100%',
-        overflow: 'hidden'
+        overflow: 'hidden',
+        backgroundColor: 'background.default',
+        borderRadius: 2,
+        border: 1,
+        borderColor: 'grey.200',
+        padding: 2
       }}
     >
       <Stack 
         direction="row" 
-        spacing={{ xs: 2, sm: 3, md: 4 }}
+        spacing={3} 
         sx={{ 
           flex: 1,
           overflowX: 'auto',
           overflowY: 'hidden',
-          paddingY: 2,
-          paddingX: 1,
+          paddingBottom: 2,
           alignItems: 'flex-start',
-          minHeight: 'fit-content',
+          minHeight: 400,
+         
           '&::-webkit-scrollbar': {
-            height: '8px',
+            height: 8,
           },
           '&::-webkit-scrollbar-track': {
-            backgroundColor: 'rgba(255,255,255,0.1)',
-            borderRadius: '4px',
+            backgroundColor: 'grey.100',
+            borderRadius: 1,
           },
           '&::-webkit-scrollbar-thumb': {
-            backgroundColor: 'rgba(255,255,255,0.3)',
-            borderRadius: '4px',
+            backgroundColor: 'grey.400',
+            borderRadius: 1,
             '&:hover': {
-              backgroundColor: 'rgba(255,255,255,0.4)',
+              backgroundColor: 'grey.500',
             },
           },
         }}

@@ -11,41 +11,62 @@ import Column from './components/Column';
 import Board from './components/Board';
 import { BoardContext, type BoardContextValue, type ColumnType } from './components/BoardContext';
 import { monitorForElements } from '@atlaskit/pragmatic-drag-and-drop/element/adapter';
+import { Dashboard } from '@mui/icons-material';
 
-//Nota para el revisor: Tema personalizado con Material UI y colores corporativos.
+//Nota para el revisor: Tema corporativo con Material UI - Escala de grises profesional
 const theme = createTheme({
   palette: {
+    mode: 'light',
     primary: {
-      main: '#1976d2',
-      light: '#42a5f5',
-      dark: '#1565c0',
+      main: '#424242',
+      light: '#6d6d6d',
+      dark: '#212121',
+      contrastText: '#ffffff',
     },
     secondary: {
-      main: '#9c27b0',
-      light: '#ba68c8',
-      dark: '#7b1fa2',
+      main: '#757575',
+      light: '#a4a4a4',
+      dark: '#494949',
+      contrastText: '#ffffff',
     },
     background: {
-      default: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      default: '#fafafa',
       paper: '#ffffff',
     },
+    text: {
+      primary: '#212121',
+      secondary: '#616161',
+    },
+    divider: '#e0e0e0',
     grey: {
+      50: '#fafafa',
       100: '#f5f5f5',
       200: '#eeeeee',
       300: '#e0e0e0',
       400: '#bdbdbd',
       500: '#9e9e9e',
+      600: '#757575',
+      700: '#616161',
+      800: '#424242',
+      900: '#212121',
     }
   },
   typography: {
-    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
+    fontFamily: '"Inter", "Roboto", "Helvetica", "Arial", sans-serif',
     h4: {
       fontWeight: 600,
-      letterSpacing: '-0.025em',
+      letterSpacing: '-0.5px',
     },
+    subtitle1: {
+      fontWeight: 500,
+      letterSpacing: '0.15px',
+    },
+    body2: {
+      lineHeight: 1.4,
+    }
   },
   shape: {
-    borderRadius: 12,
+    borderRadius: 8,
   }
 });
 
@@ -211,52 +232,45 @@ function App() {
       <CssBaseline />
       <Box sx={{ 
         minHeight: '100vh', 
-        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-        padding: { xs: 2, sm: 3, md: 4 },
-        position: 'relative',
-        '&::before': {
-          content: '""',
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          background: 'linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%)',
-          pointerEvents: 'none'
-        }
+        backgroundColor: 'background.default',
+        padding: { xs: 2, sm: 3, md: 4 }
       }}>
-        <Container maxWidth="xl" sx={{ position: 'relative', zIndex: 1 }}>
+        <Container maxWidth="xl">
           <Box sx={{ 
-            textAlign: 'center', 
             marginBottom: 4,
-            padding: 3,
-            borderRadius: 3,
-            background: 'rgba(255, 255, 255, 0.1)',
-            backdropFilter: 'blur(10px)',
-            border: '1px solid rgba(255, 255, 255, 0.2)',
+            paddingBottom: 2,
+            borderBottom: 1,
+            borderColor: 'divider'
           }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, marginBottom: 1 }}>
+              <Dashboard sx={{ 
+                color: 'primary.main', 
+                fontSize: '32px'
+              }} />
+              <Typography 
+                variant="h4" 
+                component="h1" 
+                sx={{ 
+                  color: 'text.primary', 
+                  fontWeight: 600
+                }}
+              >
+                Bestseller Trello Lite
+              </Typography>
+            </Box>
             <Typography 
-              variant="h4" 
-              component="h1" 
+              variant="body1" 
               sx={{ 
-                color: 'white', 
-                fontWeight: 700,
-                textShadow: '0 2px 4px rgba(0,0,0,0.3)',
-                marginBottom: 1,
-                fontSize: { xs: '1.8rem', sm: '2.125rem', md: '2.5rem' }
+                color: 'text.secondary',
+                fontSize: '14px'
               }}
             >
-              Bestseller Trello Lite
-            </Typography>
-            <Typography 
-              variant="subtitle1" 
-              sx={{ 
-                color: 'rgba(255, 255, 255, 0.9)',
-                fontWeight: 400,
-                letterSpacing: '0.02em'
-              }}
-            >
-              Gestión de tareas con drag & drop
+              Gestión de tareas corporativa • {new Date().toLocaleDateString('es-ES', { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+              })}
             </Typography>
           </Box>
 

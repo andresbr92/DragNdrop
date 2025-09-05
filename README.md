@@ -2,8 +2,6 @@
 
 Un MVP de aplicación tipo Trello desarrollado con React, TypeScript y Material UI. Este proyecto demuestra el uso correcto de hooks de React y implementa funcionalidad de drag and drop para gestión de tareas.
 
-El código está comentado con el prefix "Nota para el revisor", para facilitar hacer un Ctrl + Shift + F y encontrarlos de forma cómoda.
-
 ##  Características Implementadas
 
 ### Core Features
