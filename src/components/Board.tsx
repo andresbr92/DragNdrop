@@ -27,13 +27,29 @@ const Board = forwardRef<HTMLDivElement, BoardProps>(({ children }, ref) => {
     >
       <Stack 
         direction="row" 
-        spacing={2} 
+        spacing={{ xs: 2, sm: 3, md: 4 }}
         sx={{ 
           flex: 1,
           overflowX: 'auto',
           overflowY: 'hidden',
-          paddingBottom: 2,
-          alignItems: 'flex-start'
+          paddingY: 2,
+          paddingX: 1,
+          alignItems: 'flex-start',
+          minHeight: 'fit-content',
+          '&::-webkit-scrollbar': {
+            height: '8px',
+          },
+          '&::-webkit-scrollbar-track': {
+            backgroundColor: 'rgba(255,255,255,0.1)',
+            borderRadius: '4px',
+          },
+          '&::-webkit-scrollbar-thumb': {
+            backgroundColor: 'rgba(255,255,255,0.3)',
+            borderRadius: '4px',
+            '&:hover': {
+              backgroundColor: 'rgba(255,255,255,0.4)',
+            },
+          },
         }}
       >
         {children}
