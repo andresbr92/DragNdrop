@@ -6,9 +6,10 @@ interface CardProps {
   title: string;
   cardId: string;
   columnId: string;
+  cardIndex: number;
 }
 
-const Card: React.FC<CardProps> = ({ title, cardId, columnId }) => {
+const Card: React.FC<CardProps> = ({ title, cardId, columnId, cardIndex }) => {
   const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -20,10 +21,11 @@ const Card: React.FC<CardProps> = ({ title, cardId, columnId }) => {
       getInitialData: () => ({
         type: 'card',
         cardId,
-        columnId
+        columnId,
+        cardIndex
       })
     });
-  }, [cardId, columnId]);
+  }, [cardId, columnId, cardIndex]);
 
   return (
     <Paper
