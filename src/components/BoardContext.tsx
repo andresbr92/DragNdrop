@@ -1,10 +1,8 @@
 // Nota para el revisor: Aquí definimos el contexto (estado global simplificado) y las funciones principales.
 import { createContext, useContext } from 'react';
-export type ColumnType = {
-	title: string;
-	columnId: string;
-	cards: string[];
-};
+import type { ColumnType } from '../hooks/useBoardState';
+
+export type { ColumnType };
 
 export type BoardContextValue = {
   getColumns: () => ColumnType[];
