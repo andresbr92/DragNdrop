@@ -58,7 +58,7 @@ App.tsx (Estado global + Monitor)
 ```bash
 # Clonar el repositorio
 git clone
-cd trello-lite
+cd DragNdrop
 
 # Instalar dependencias
 npm install
