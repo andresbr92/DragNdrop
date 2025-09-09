@@ -7,8 +7,8 @@ export type ColumnType = {
   cards: string[];
 };
 
-export const useBoardState = (initilData: ColumnType[]) => {
-  const [columns, setColumns] = useState<ColumnType[]>(initilData);
+export const useBoardState = (initialData: ColumnType[]) => {
+  const [columns, setColumns] = useState<ColumnType[]>(initialData);
   const stableData = useRef(columns);
   
   useEffect(() => {

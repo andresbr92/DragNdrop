@@ -1,6 +1,6 @@
 # Bestseller Trello Lite Version
 
-Un MVP de aplicación tipo Trello desarrollado con React, TypeScript y Material UI. Este proyecto demuestra el uso correcto de hooks de React y implementa funcionalidad de drag and drop para gestión de tareas.
+Un MVP de aplicación tipo Trello desarrollado con React, TypeScript y Material UI. Este proyecto demuestra el uso correcto de hooks (y customHooks) de React e implementa funcionalidad de drag and drop para gestión de tareas.
 
 ##  Características Implementadas
 
